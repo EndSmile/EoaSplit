@@ -6,7 +6,6 @@ import android.support.annotation.StringRes;
 import android.support.v4.app.Fragment;
 
 import com.ldy.common.factor.Factory;
-import com.ldy.common.factor.ResourceFactory;
 
 /**
  * Created by ldy on 2017/6/21.
@@ -14,14 +13,17 @@ import com.ldy.common.factor.ResourceFactory;
 
 public class MainPageEntity implements Comparable<MainPageEntity> {
     private final Factory<Fragment> fragmentFactory;
-    private final ResourceFactory titleRes;
-    private final ResourceFactory iconNormalRes;
-    private final ResourceFactory iconSelectRes;
+    @StringRes
+    private final int titleRes;
+    @DrawableRes
+    private final int iconNormalRes;
+    @DrawableRes
+    private final int iconSelectRes;
 
     private final int priority;
 
-    public MainPageEntity(Factory<Fragment> fragmentFactory, ResourceFactory titleRes,
-                          ResourceFactory iconNormalRes, ResourceFactory iconSelectRes, int priority) {
+    public MainPageEntity(Factory<Fragment> fragmentFactory, int titleRes,
+                          int iconNormalRes, int iconSelectRes, int priority) {
         this.fragmentFactory = fragmentFactory;
         this.titleRes = titleRes;
         this.iconNormalRes = iconNormalRes;
@@ -37,40 +39,46 @@ public class MainPageEntity implements Comparable<MainPageEntity> {
         return priority;
     }
 
-    public ResourceFactory getTitleRes() {
+    public int getTitleRes() {
         return titleRes;
     }
 
-    public ResourceFactory getIconNormalRes() {
+    public int getIconNormalRes() {
         return iconNormalRes;
     }
 
-    public ResourceFactory getIconSelectRes() {
+    public int getIconSelectRes() {
         return iconSelectRes;
     }
 
-    public static MainPageEntity buildFirstPage(Factory<Fragment> fragmentFactory, ResourceFactory titleRes,
-                                                ResourceFactory iconNormalRes, ResourceFactory iconSelectRes) {
+    public static MainPageEntity buildFirstPage(Factory<Fragment> fragmentFactory,
+                                                @StringRes int titleRes,
+                                                @DrawableRes int iconNormalRes,
+                                                @DrawableRes int iconSelectRes) {
         return new MainPageEntity(fragmentFactory, titleRes, iconNormalRes, iconSelectRes, 0);
     }
 
-    public static MainPageEntity buildSecondPage(Factory<Fragment> fragmentFactory, ResourceFactory titleRes,
-                                                 ResourceFactory iconNormalRes, ResourceFactory iconSelectRes) {
+    public static MainPageEntity buildSecondPage(Factory<Fragment> fragmentFactory, @StringRes int titleRes,
+                                                 @DrawableRes int iconNormalRes,
+                                                 @DrawableRes int iconSelectRes) {
         return new MainPageEntity(fragmentFactory, titleRes, iconNormalRes, iconSelectRes, 1);
     }
 
-    public static MainPageEntity buildThirdPage(Factory<Fragment> fragmentFactory, ResourceFactory titleRes,
-                                                ResourceFactory iconNormalRes, ResourceFactory iconSelectRes) {
+    public static MainPageEntity buildThirdPage(Factory<Fragment> fragmentFactory, @StringRes int titleRes,
+                                                @DrawableRes int iconNormalRes,
+                                                @DrawableRes int iconSelectRes) {
         return new MainPageEntity(fragmentFactory, titleRes, iconNormalRes, iconSelectRes, 2);
     }
 
-    public MainPageEntity buildFourthPage(Factory<Fragment> fragmentFactory, ResourceFactory titleRes,
-                                          ResourceFactory iconNormalRes, ResourceFactory iconSelectRes) {
+    public MainPageEntity buildFourthPage(Factory<Fragment> fragmentFactory, @StringRes int titleRes,
+                                          @DrawableRes int iconNormalRes,
+                                          @DrawableRes int iconSelectRes) {
         return new MainPageEntity(fragmentFactory, titleRes, iconNormalRes, iconSelectRes, 3);
     }
 
-    public MainPageEntity buildFifthPage(Factory<Fragment> fragmentFactory, ResourceFactory titleRes,
-                                         ResourceFactory iconNormalRes, ResourceFactory iconSelectRes) {
+    public MainPageEntity buildFifthPage(Factory<Fragment> fragmentFactory, @StringRes int titleRes,
+                                         @DrawableRes int iconNormalRes,
+                                         @DrawableRes int iconSelectRes) {
         return new MainPageEntity(fragmentFactory, titleRes, iconNormalRes, iconSelectRes, 4);
     }
 

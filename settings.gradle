@@ -1,1 +1,1 @@
-include ':app', ':account-common', ':account', ':im', ':im-common', ':common', ':main', ':main-common', ':setting'
+include ':app', ':account-common', ':account', ':im', ':im-common', ':common', ':main', ':main-common', ':setting', ':setting-common'

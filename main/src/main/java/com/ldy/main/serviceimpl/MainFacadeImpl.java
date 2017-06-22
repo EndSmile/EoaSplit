@@ -1,27 +1,24 @@
 package com.ldy.main.serviceimpl;
 
 import com.ldy.main.common.entity.MainPageEntity;
-import com.ldy.main.common.service.MainService;
+import com.ldy.main.common.facade.MainFacade;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
-
-import rx.Observable;
 
 /**
  * Created by ldy on 2017/6/21.
  */
 
-public class MainServiceImpl implements MainService {
+public class MainFacadeImpl implements MainFacade {
 
-    private static MainServiceImpl instance = new MainServiceImpl();
+    private static MainFacadeImpl instance = new MainFacadeImpl();
 
-    private MainServiceImpl() {
+    private MainFacadeImpl() {
     }
 
-    public static MainServiceImpl instance(){
+    public static MainFacadeImpl instance(){
         return instance;
     }
 

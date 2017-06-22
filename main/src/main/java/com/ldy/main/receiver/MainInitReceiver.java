@@ -3,14 +3,15 @@ package com.ldy.main.receiver;
 import android.content.Context;
 
 import com.ldy.common.receiver.ModuleInitReceiver;
-import com.ldy.main.common.service.MainServiceRepository;
-import com.ldy.main.serviceimpl.MainServiceImpl;
+import com.ldy.main.common.facade.MainFacade;
+import com.ldy.main.common.facade.MainFacadeRepository;
+import com.ldy.main.serviceimpl.MainFacadeImpl;
 
 public class MainInitReceiver extends ModuleInitReceiver {
 
     @Override
     protected void init(Context context) {
-        MainServiceRepository.instance().setMainService(MainServiceImpl.instance());
+        MainFacadeRepository.instance().setFacade(MainFacadeImpl.instance());
     }
 
     @Override
