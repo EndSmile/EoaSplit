@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.ldy.main">
+
+    <application
+        android:allowBackup="true"
+        android:label="@string/app_name"
+        android:supportsRtl="true">
+        <activity android:name=".LauncherActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <receiver android:name=".receiver.MainInitReceiver">
+            <intent-filter>
+                <action android:name="com.xdja.eoa.module.init" />
+                <action android:name="com.xdja.eoa.module.initFinish"/>
+            </intent-filter>
+        </receiver>
+        <activity android:name=".MainActivity"
+            android:label="@string/main"/>
+    </application>
+
+</manifest>

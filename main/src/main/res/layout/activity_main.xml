@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.ldy.main.MainActivity">
+
+    <com.ldy.main.widget.tabview.TabView
+        android:id="@+id/tabview_main"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="#f7f6fb"
+        android:orientation="horizontal"
+        android:paddingBottom="7dp"
+        app:tab_item_padding="7dip"
+        app:tab_text_normal_color="#626262"
+        app:tab_text_select_color="#0184ff"
+        app:tab_text_size="12dp" />
+
+    <View
+        android:id="@+id/divider_main"
+        style="@style/HorizonDivider"
+        android:layout_above="@id/tabview_main" />
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/vp_main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/divider_main" />
+
+</RelativeLayout>

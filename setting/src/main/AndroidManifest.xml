@@ -1,0 +1,18 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+
+    package="com.ldy.setting">
+
+    <application android:allowBackup="true"
+        android:supportsRtl="true">
+        <receiver
+            android:name=".receiver.SettingInitReceiver"
+            android:enabled="true"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.xdja.eoa.module.init" />
+                <action android:name="com.xdja.eoa.module.initFinish" />
+            </intent-filter>
+        </receiver>
+    </application>
+
+</manifest>
