@@ -22,15 +22,4 @@ public class MainFacadeImpl implements MainFacade {
         return instance;
     }
 
-    private List<MainPageEntity> pageEntityList = new ArrayList<>();
-
-    @Override
-    public void registerPage(MainPageEntity mainPageEntity) {
-        pageEntityList.add(mainPageEntity);
-        Collections.sort(pageEntityList);
-    }
-
-    public List<MainPageEntity> getPageEntityList() {
-        return pageEntityList;
-    }
 }

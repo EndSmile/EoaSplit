@@ -18,10 +18,7 @@ public class LauncherActivity extends AppCompatActivity {
 
     public void login(View view) {
         AccountFacade accountFacade = AccountFacadeRepository.instance()
-                .getFacade();
-        if (accountFacade == null) {
-            throw new NullPointerException("accountService can not be null");
-        }
+                .getVerifyFacade();
         accountFacade.toLoginActivity(MainNavigator.get2MainIntent());
     }
 }

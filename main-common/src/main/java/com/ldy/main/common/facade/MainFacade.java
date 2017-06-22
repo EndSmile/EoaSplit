@@ -8,5 +8,4 @@ import com.ldy.main.common.entity.MainPageEntity;
  */
 
 public interface MainFacade extends ModuleFacade {
-    void registerPage(MainPageEntity mainPageEntity);
 }

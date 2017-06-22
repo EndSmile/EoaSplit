@@ -5,6 +5,7 @@ import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
+import com.ldy.common.base.ComparableWrapper;
 import com.ldy.main.common.entity.MainPageEntity;
 import com.ldy.main.common.event.GetMainPageEvent;
 import com.ldy.main.serviceimpl.MainFacadeImpl;
@@ -28,16 +29,17 @@ public class MainActivity extends AppCompatActivity {
         viewPager = ((ViewPager) findViewById(R.id.vp_main));
         tabView = ((TabView) findViewById(R.id.tabview_main));
 
-        EventBus.getDefault().post(new GetMainPageEvent());
-        List<MainPageEntity> pageEntityList = MainFacadeImpl.instance().getPageEntityList();
+        GetMainPageEvent event = new GetMainPageEvent();
+        EventBus.getDefault().post(event);
 
-        int length = pageEntityList.size();
+        int length = event.size();
         ArrayList<Fragment> fragments = new ArrayList<>(length);
         int[] titles = new int[length];
         int[] iconNormals = new int[length];
         int[] iconSelects = new int[length];
         int i = 0;
-        for (MainPageEntity mainPageEntity : pageEntityList) {
+        for (ComparableWrapper<MainPageEntity> comparableWrapper : event) {
+            MainPageEntity mainPageEntity = comparableWrapper.getContent();
             titles[i] = mainPageEntity.getTitleRes();
             iconNormals[i] = mainPageEntity.getIconNormalRes();
             iconSelects[i] = mainPageEntity.getIconSelectRes();

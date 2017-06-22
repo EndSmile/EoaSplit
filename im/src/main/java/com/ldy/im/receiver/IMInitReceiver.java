@@ -5,6 +5,7 @@ import android.support.v4.app.Fragment;
 import android.util.Log;
 
 import com.ldy.common.EoaApplication;
+import com.ldy.common.base.ComparableWrapper;
 import com.ldy.common.factor.Factory;
 import com.ldy.common.receiver.ModuleInitReceiver;
 import com.ldy.im.IMFragment;
@@ -32,15 +33,17 @@ public class IMInitReceiver extends ModuleInitReceiver {
 
     @Subscribe
     public void initMainPage(GetMainPageEvent event) {
-        event.add(MainPageEntity.buildFirstPage(
-                new Factory<Fragment>() {
-                    @Override
-                    public Fragment build() {
-                        return new IMFragment();
-                    }
-                },
-                R.string.im_conversation, R.drawable.im_ic_im_normal, R.drawable.im_ic_im_selected)
-        );
+        event.add(ComparableWrapper.buildFirst(
+                new MainPageEntity(
+                        new Factory<Fragment>() {
+                            @Override
+                            public Fragment build() {
+                                return new IMFragment();
+                            }
+                        },
+                        R.string.im_conversation, R.drawable.im_ic_im_normal, R.drawable.im_ic_im_selected
+                )
+        ));
 
     }
 
