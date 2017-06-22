@@ -92,25 +92,25 @@ public class TabView extends LinearLayout implements View.OnClickListener {
 
     public TabView(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
-        TypedArray typedArray = getResources().obtainAttributes(attrs, R.styleable.TabView);
+        TypedArray typedArray = getResources().obtainAttributes(attrs, R.styleable.main_TabView);
         int N = typedArray.getIndexCount();
         for (int i = 0; i < N; i++) {
             int i1 = typedArray.getIndex(i);
-            if (i1 == R.styleable.TabView_tab_text_size) {
+            if (i1 == R.styleable.main_TabView_tab_text_size) {
                 mTextSize = (int) typedArray.getDimension(i, TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_SP,
                         mTextSize, getResources().getDisplayMetrics()));
 
-            } else if (i1 == R.styleable.TabView_tab_text_normal_color) {
+            } else if (i1 == R.styleable.main_TabView_tab_text_normal_color) {
                 mTextColorNormal = typedArray.getColor(i, mTextColorNormal);
 
-            } else if (i1 == R.styleable.TabView_tab_text_select_color) {
+            } else if (i1 == R.styleable.main_TabView_tab_text_select_color) {
                 mTextColorSelect = typedArray.getColor(i, mTextColorSelect);
 
-            } else if (i1 == R.styleable.TabView_tab_item_padding) {
+            } else if (i1 == R.styleable.main_TabView_tab_item_padding) {
                 mPadding = (int) typedArray.getDimension(i, TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP,
                         mPadding, getResources().getDisplayMetrics()));
 
-            } else if (i1 == R.styleable.TabView_tab_main_position) {
+            } else if (i1 == R.styleable.main_TabView_tab_main_position) {
                 position = typedArray.getInt(i, position);
 
             } else {

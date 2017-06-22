@@ -4,11 +4,10 @@
 
     <application
         android:allowBackup="true"
-        android:label="@string/app_name"
         android:supportsRtl="true">
         <activity
             android:name=".LoginActivity"
-            android:label="@string/title_activity_login" />
+            android:label="@string/account_title_activity_login" />
 
         <receiver android:name=".receiver.AccountInitReceiver">
             <intent-filter>

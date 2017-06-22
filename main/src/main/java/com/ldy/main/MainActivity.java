@@ -8,14 +8,12 @@ import android.os.Bundle;
 import com.ldy.common.base.ComparableWrapper;
 import com.ldy.main.common.entity.MainPageEntity;
 import com.ldy.main.common.event.GetMainPageEvent;
-import com.ldy.main.serviceimpl.MainFacadeImpl;
 import com.ldy.main.widget.tabview.TabFragmentAdapter;
 import com.ldy.main.widget.tabview.TabView;
 
 import org.greenrobot.eventbus.EventBus;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -25,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.main_activity_main);
         viewPager = ((ViewPager) findViewById(R.id.vp_main));
         tabView = ((TabView) findViewById(R.id.tabview_main));
 

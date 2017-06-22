@@ -4,7 +4,6 @@
 
     <application
         android:allowBackup="true"
-        android:label="@string/app_name"
         android:supportsRtl="true">
         <activity android:name=".LauncherActivity">
             <intent-filter>
@@ -20,7 +19,7 @@
             </intent-filter>
         </receiver>
         <activity android:name=".MainActivity"
-            android:label="@string/main"/>
+            android:label="@string/main_main"/>
     </application>
 
 </manifest>

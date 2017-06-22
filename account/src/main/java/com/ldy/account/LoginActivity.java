@@ -32,6 +32,7 @@ import android.widget.TextView;
 
 import com.ldy.account.common.bean.AccountBean;
 import com.ldy.account.common.event.LoginEvent;
+import com.ldy.account.facadeImpl.AccountFacadeImpl;
 import com.ldy.common.navigator.Navigator;
 
 import org.greenrobot.eventbus.EventBus;
@@ -72,7 +73,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login);
+        setContentView(R.layout.account_activity_login);
         // Set up the login form.
         mEmailView = (AutoCompleteTextView) findViewById(R.id.email);
         populateAutoComplete();
@@ -117,7 +118,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
             return true;
         }
         if (shouldShowRequestPermissionRationale(READ_CONTACTS)) {
-            Snackbar.make(mEmailView, R.string.permission_rationale, Snackbar.LENGTH_INDEFINITE)
+            Snackbar.make(mEmailView, R.string.account_permission_rationale, Snackbar.LENGTH_INDEFINITE)
                     .setAction(android.R.string.ok, new View.OnClickListener() {
                         @Override
                         @TargetApi(Build.VERSION_CODES.M)
@@ -168,18 +169,18 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
 
         // Check for a valid password, if the user entered one.
         if (!TextUtils.isEmpty(password) && !isPasswordValid(password)) {
-            mPasswordView.setError(getString(R.string.error_invalid_password));
+            mPasswordView.setError(getString(R.string.account_error_invalid_password));
             focusView = mPasswordView;
             cancel = true;
         }
 
         // Check for a valid email address.
         if (TextUtils.isEmpty(email)) {
-            mEmailView.setError(getString(R.string.error_field_required));
+            mEmailView.setError(getString(R.string.account_error_field_required));
             focusView = mEmailView;
             cancel = true;
         } else if (!isEmailValid(email)) {
-            mEmailView.setError(getString(R.string.error_invalid_email));
+            mEmailView.setError(getString(R.string.account_error_invalid_email));
             focusView = mEmailView;
             cancel = true;
         }
@@ -341,10 +342,12 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
 
             if (success) {
 //                finish();
-                EventBus.getDefault().post(new LoginEvent(new AccountBean(mEmail)));
+                AccountBean accountBean = new AccountBean(mEmail);
+                AccountFacadeImpl.instance().setAccount(accountBean);
+                EventBus.getDefault().post(new LoginEvent(accountBean));
                 Navigator.startNext(LoginActivity.this);
             } else {
-                mPasswordView.setError(getString(R.string.error_incorrect_password));
+                mPasswordView.setError(getString(R.string.account_error_incorrect_password));
                 mPasswordView.requestFocus();
             }
         }

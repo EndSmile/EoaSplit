@@ -6,6 +6,12 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
+
+import com.ldy.common.base.ComparableWrapper;
+import com.ldy.setting.common.event.GetSettingItemEvent;
+
+import org.greenrobot.eventbus.EventBus;
 
 
 /**
@@ -23,7 +29,14 @@ public class SettingFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.setting_fragment_setting, container, false);
+        LinearLayout view = (LinearLayout) inflater.inflate(R.layout.setting_fragment_setting, container, false);
+        GetSettingItemEvent event = new GetSettingItemEvent(getActivity());
+        EventBus.getDefault().post(event);
+        for (ComparableWrapper<View> wrapper : event) {
+            View content = wrapper.getContent();
+            view.addView(content);
+        }
+        return view;
     }
 
 }

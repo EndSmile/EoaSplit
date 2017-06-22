@@ -8,6 +8,9 @@ import com.ldy.common.EoaApplication;
 
 /**
  * Created by ldy on 2017/6/21.
+ * 为了让各模块完成初始化，在{@link EoaApplication#onCreate()}时发出广播,需要在AndroidManifest.xml中注册</p>
+ * {@link #ACTION_MODULE_INIT},{@link #ACTION_MODULE_INIT_FINISH}<p/>
+ * 作为action的广播
  */
 
 public abstract class ModuleInitReceiver extends BroadcastReceiver {
@@ -18,9 +21,9 @@ public abstract class ModuleInitReceiver extends BroadcastReceiver {
     @Override
     public void onReceive(Context context, Intent intent) {
         String action = intent.getAction();
-        if (ACTION_MODULE_INIT.equals(action)){
+        if (ACTION_MODULE_INIT.equals(action)) {
             init(context);
-        }else if (ACTION_MODULE_INIT_FINISH.equals(action)){
+        } else if (ACTION_MODULE_INIT_FINISH.equals(action)) {
             initFinish(context);
         }
     }

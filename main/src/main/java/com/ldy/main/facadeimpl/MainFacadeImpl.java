@@ -1,11 +1,6 @@
-package com.ldy.main.serviceimpl;
+package com.ldy.main.facadeimpl;
 
-import com.ldy.main.common.entity.MainPageEntity;
 import com.ldy.main.common.facade.MainFacade;
-
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
 
 /**
  * Created by ldy on 2017/6/21.

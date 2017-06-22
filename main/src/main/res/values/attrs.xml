@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <declare-styleable name="TabView">
+    <declare-styleable name="main_TabView">
         <attr name="tab_text_size" format="dimension" />
         <attr name="tab_text_select_color" format="color" />
         <attr name="tab_text_normal_color" format="color" />
