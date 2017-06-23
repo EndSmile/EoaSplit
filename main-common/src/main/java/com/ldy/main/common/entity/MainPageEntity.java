@@ -46,4 +46,13 @@ public class MainPageEntity {
         return iconSelectRes;
     }
 
+    @Override
+    public String toString() {
+        return "MainPageEntity{" +
+                "fragmentFactory=" + fragmentFactory +
+                ", titleRes=" + titleRes +
+                ", iconNormalRes=" + iconNormalRes +
+                ", iconSelectRes=" + iconSelectRes +
+                '}';
+    }
 }

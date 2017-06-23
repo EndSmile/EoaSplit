@@ -47,4 +47,11 @@ public class ComparableWrapper<T> implements Comparable<ComparableWrapper<T>> {
         return new ComparableWrapper<T>(5,content);
     }
 
+    @Override
+    public String toString() {
+        return "ComparableWrapper{" +
+                "priority=" + priority +
+                ", content=" + content +
+                '}';
+    }
 }

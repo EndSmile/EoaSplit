@@ -1,4 +1,4 @@
-package com.ldy.common.modulecommunication;
+package com.ldy.common.modulecommunication.facade;
 
 /**
  * Created by ldy on 2017/6/22.

@@ -1,7 +1,7 @@
 package com.ldy.main.common.event;
 
 import com.ldy.common.base.ComparableWrapper;
-import com.ldy.common.modulecommunication.GetSortDatasEvent;
+import com.ldy.common.modulecommunication.event.GetSortDatasEvent;
 import com.ldy.main.common.entity.MainPageEntity;
 
 /**

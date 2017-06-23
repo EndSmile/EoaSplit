@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
 import com.ldy.common.base.ComparableWrapper;
+import com.ldy.common.modulecommunication.event.plug.EventControl;
 import com.ldy.main.common.entity.MainPageEntity;
 import com.ldy.main.common.event.GetMainPageEvent;
 import com.ldy.main.widget.tabview.TabFragmentAdapter;
@@ -28,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
         tabView = ((TabView) findViewById(R.id.tabview_main));
 
         GetMainPageEvent event = new GetMainPageEvent();
-        EventBus.getDefault().post(event);
+        EventControl.getInstance().post(event);
 
         int length = event.size();
         ArrayList<Fragment> fragments = new ArrayList<>(length);

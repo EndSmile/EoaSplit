@@ -1,7 +1,6 @@
 package com.ldy.main.common.facade;
 
-import com.ldy.common.modulecommunication.ModuleFacade;
-import com.ldy.main.common.entity.MainPageEntity;
+import com.ldy.common.modulecommunication.facade.ModuleFacade;
 
 /**
  * Created by ldy on 2017/6/19.

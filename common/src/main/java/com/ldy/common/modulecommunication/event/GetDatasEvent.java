@@ -1,5 +1,10 @@
-package com.ldy.common.modulecommunication;
+package com.ldy.common.modulecommunication.event;
 
+import android.support.annotation.NonNull;
+
+import com.ldy.common.util.GenericityUtil;
+
+import java.lang.reflect.ParameterizedType;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -10,7 +15,7 @@ import java.util.List;
  * {@link #add(Object)}接口添加数据
  */
 
-public abstract class GetDatasEvent<E> implements Iterable<E> {
+public abstract class GetDatasEvent<E> implements Iterable<E>, Event {
     protected List<E> dataList = new ArrayList<>();
 
     public boolean add(E t) {
@@ -26,11 +31,20 @@ public abstract class GetDatasEvent<E> implements Iterable<E> {
     }
 
     public List<E> getDataList() {
-        return new ArrayList<>(dataList);
+        return dataList;
     }
 
     @Override
+    @NonNull
     public Iterator<E> iterator() {
         return dataList.iterator();
     }
+
+    @Override
+    public String toString() {
+        return getClass().getSimpleName()+"{" +
+                "dataList=" + dataList +
+                '}';
+    }
+
 }

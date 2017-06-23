@@ -33,6 +33,7 @@ import android.widget.TextView;
 import com.ldy.account.common.bean.AccountBean;
 import com.ldy.account.common.event.LoginEvent;
 import com.ldy.account.facadeImpl.AccountFacadeImpl;
+import com.ldy.common.modulecommunication.event.plug.EventControl;
 import com.ldy.common.navigator.Navigator;
 
 import org.greenrobot.eventbus.EventBus;
@@ -147,7 +148,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
 
 
     /**
-     * Attempts to sign in or register the account specified by the login form.
+     * Attempts to sign in or registerPlug the account specified by the login form.
      * If there are form errors (invalid email, missing fields, etc.), the
      * errors are presented and no actual login attempt is made.
      */
@@ -331,7 +332,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
                 }
             }
 
-            // TODO: register the new account here.
+            // TODO: registerPlug the new account here.
             return true;
         }
 
@@ -344,7 +345,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
 //                finish();
                 AccountBean accountBean = new AccountBean(mEmail);
                 AccountFacadeImpl.instance().setAccount(accountBean);
-                EventBus.getDefault().post(new LoginEvent(accountBean));
+                EventControl.getInstance().post(new LoginEvent(accountBean));
                 Navigator.startNext(LoginActivity.this);
             } else {
                 mPasswordView.setError(getString(R.string.account_error_incorrect_password));

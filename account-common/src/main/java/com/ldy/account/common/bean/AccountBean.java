@@ -19,4 +19,10 @@ public class AccountBean {
         this.userName = userName;
     }
 
+    @Override
+    public String toString() {
+        return "AccountBean{" +
+                "userName='" + userName + '\'' +
+                '}';
+    }
 }

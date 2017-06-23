@@ -1,4 +1,4 @@
-package com.ldy.common.modulecommunication;
+package com.ldy.common.modulecommunication.event;
 
 import java.util.Collections;
 

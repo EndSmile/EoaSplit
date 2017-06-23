@@ -19,7 +19,7 @@ public class SettingInitReceiver extends ModuleInitReceiver {
 
     @Override
     protected void init(Context context) {
-        Log.d("IMInitReceiver", "imInit");
+        Log.d("SettingInitReceiver", "settingInit");
         EventBus.getDefault().register(this);
     }
 

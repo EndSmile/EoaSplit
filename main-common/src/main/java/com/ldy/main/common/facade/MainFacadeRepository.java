@@ -1,8 +1,6 @@
 package com.ldy.main.common.facade;
 
-import android.support.annotation.Nullable;
-
-import com.ldy.common.modulecommunication.ModuleFacadeRepository;
+import com.ldy.common.modulecommunication.facade.ModuleFacadeRepository;
 
 /**
  * Created by ldy on 2017/6/19.

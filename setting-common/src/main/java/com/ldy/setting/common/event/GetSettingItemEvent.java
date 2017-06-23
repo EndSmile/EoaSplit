@@ -4,7 +4,7 @@ import android.content.Context;
 import android.view.View;
 
 import com.ldy.common.base.ComparableWrapper;
-import com.ldy.common.modulecommunication.GetSortDatasEvent;
+import com.ldy.common.modulecommunication.event.GetSortDatasEvent;
 
 /**
  * Created by ldy on 2017/6/22.

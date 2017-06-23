@@ -4,6 +4,9 @@ import android.app.Application;
 import android.content.Context;
 import android.content.Intent;
 
+import com.ldy.common.modulecommunication.event.plug.EventLogPlug;
+import com.ldy.common.modulecommunication.event.plug.EventControl;
+
 
 /**
  * Created by ldy on 2017/6/19.
@@ -20,6 +23,7 @@ public class EoaApplication extends Application {
         sendBroadcast(new Intent("com.xdja.eoa.module.init"));
         sendBroadcast(new Intent("com.xdja.eoa.module.initFinish"));
 
+        EventControl.getInstance().registerPlug(new EventLogPlug());
     }
 
     public static Context getContext() {

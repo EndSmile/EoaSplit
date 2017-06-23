@@ -1,4 +1,4 @@
-package com.ldy.common.modulecommunication;
+package com.ldy.common.modulecommunication.facade;
 
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
