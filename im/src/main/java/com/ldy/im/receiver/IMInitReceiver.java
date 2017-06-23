@@ -7,6 +7,7 @@ import android.util.Log;
 import com.ldy.common.EoaApplication;
 import com.ldy.common.base.ComparableWrapper;
 import com.ldy.common.factor.Factory;
+import com.ldy.common.modulecommunication.event.plug.EventControl;
 import com.ldy.common.receiver.ModuleInitReceiver;
 import com.ldy.im.IMFragment;
 import com.ldy.im.R;
@@ -23,7 +24,7 @@ public class IMInitReceiver extends ModuleInitReceiver {
     @Override
     protected void init(Context context) {
         Log.d("IMInitReceiver", "imInit");
-        EventBus.getDefault().register(this);
+        EventControl.instance().register(this);
     }
 
     @Override

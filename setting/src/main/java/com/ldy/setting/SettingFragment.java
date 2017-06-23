@@ -12,8 +12,6 @@ import com.ldy.common.base.ComparableWrapper;
 import com.ldy.common.modulecommunication.event.plug.EventControl;
 import com.ldy.setting.common.event.GetSettingItemEvent;
 
-import org.greenrobot.eventbus.EventBus;
-
 
 /**
  * A simple {@link Fragment} subclass.
@@ -32,7 +30,7 @@ public class SettingFragment extends Fragment {
         // Inflate the layout for this fragment
         LinearLayout view = (LinearLayout) inflater.inflate(R.layout.setting_fragment_setting, container, false);
         GetSettingItemEvent event = new GetSettingItemEvent(getActivity());
-        EventControl.getInstance().post(event);
+        EventControl.instance().post(event);
         for (ComparableWrapper<View> wrapper : event) {
             View content = wrapper.getContent();
             view.addView(content);

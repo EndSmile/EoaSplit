@@ -36,8 +36,6 @@ import com.ldy.account.facadeImpl.AccountFacadeImpl;
 import com.ldy.common.modulecommunication.event.plug.EventControl;
 import com.ldy.common.navigator.Navigator;
 
-import org.greenrobot.eventbus.EventBus;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -345,7 +343,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
 //                finish();
                 AccountBean accountBean = new AccountBean(mEmail);
                 AccountFacadeImpl.instance().setAccount(accountBean);
-                EventControl.getInstance().post(new LoginEvent(accountBean));
+                EventControl.instance().post(new LoginEvent(accountBean));
                 Navigator.startNext(LoginActivity.this);
             } else {
                 mPasswordView.setError(getString(R.string.account_error_incorrect_password));

@@ -6,6 +6,7 @@ import android.util.Log;
 
 import com.ldy.common.base.ComparableWrapper;
 import com.ldy.common.factor.Factory;
+import com.ldy.common.modulecommunication.event.plug.EventControl;
 import com.ldy.common.receiver.ModuleInitReceiver;
 import com.ldy.main.common.entity.MainPageEntity;
 import com.ldy.main.common.event.GetMainPageEvent;
@@ -20,7 +21,7 @@ public class SettingInitReceiver extends ModuleInitReceiver {
     @Override
     protected void init(Context context) {
         Log.d("SettingInitReceiver", "settingInit");
-        EventBus.getDefault().register(this);
+        EventControl.instance().register(this);
     }
 
     @Override
@@ -45,7 +46,6 @@ public class SettingInitReceiver extends ModuleInitReceiver {
         ));
 
     }
-
 
 
 }

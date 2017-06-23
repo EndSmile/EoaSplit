@@ -13,18 +13,28 @@ import java.util.List;
 
 public class EventControl {
     private static final EventControl instance = new EventControl();
+    private EventBus eventBus;
 
-    public static EventControl getInstance() {
+    public static EventControl instance() {
         return instance;
     }
 
     private EventControl() {
+        eventBus = EventBus.getDefault();
     }
 
-    public void post(Event event){
+    public void post(Event event) {
         preEvent(event);
-        EventBus.getDefault().post(event);
+        eventBus.post(event);
         postEvent(event);
+    }
+
+    public void register(Object subscriber) {
+        eventBus.register(subscriber);
+    }
+
+    public void unregister(Object subscriber) {
+        eventBus.unregister(subscriber);
     }
 
     private List<EventPlug> eventPlugs;
@@ -42,10 +52,10 @@ public class EventControl {
         }
     }
 
-    private boolean preEvent(Event event){
+    private boolean preEvent(Event event) {
         for (EventPlug eventPlug : eventPlugs) {
-            if (eventPlug.getEventClass().isAssignableFrom(event.getClass())){
-                if (eventPlug.preEvent(event)){
+            if (eventPlug.getEventClass().isAssignableFrom(event.getClass())) {
+                if (eventPlug.preEvent(event)) {
                     return true;
                 }
             }
@@ -53,9 +63,9 @@ public class EventControl {
         return false;
     }
 
-    private void postEvent(Event event){
+    private void postEvent(Event event) {
         for (EventPlug eventPlug : eventPlugs) {
-            if (eventPlug.getEventClass().isAssignableFrom(event.getClass())){
+            if (eventPlug.getEventClass().isAssignableFrom(event.getClass())) {
                 eventPlug.postEvent(event);
             }
         }

@@ -12,8 +12,6 @@ import com.ldy.main.common.event.GetMainPageEvent;
 import com.ldy.main.widget.tabview.TabFragmentAdapter;
 import com.ldy.main.widget.tabview.TabView;
 
-import org.greenrobot.eventbus.EventBus;
-
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
@@ -29,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
         tabView = ((TabView) findViewById(R.id.tabview_main));
 
         GetMainPageEvent event = new GetMainPageEvent();
-        EventControl.getInstance().post(event);
+        EventControl.instance().post(event);
 
         int length = event.size();
         ArrayList<Fragment> fragments = new ArrayList<>(length);

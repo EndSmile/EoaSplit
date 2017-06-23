@@ -23,7 +23,7 @@ public class EoaApplication extends Application {
         sendBroadcast(new Intent("com.xdja.eoa.module.init"));
         sendBroadcast(new Intent("com.xdja.eoa.module.initFinish"));
 
-        EventControl.getInstance().registerPlug(new EventLogPlug());
+        EventControl.instance().registerPlug(new EventLogPlug());
     }
 
     public static Context getContext() {

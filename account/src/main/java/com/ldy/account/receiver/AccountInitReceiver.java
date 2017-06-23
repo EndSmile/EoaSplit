@@ -7,15 +7,14 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.ldy.account.common.bean.AccountBean;
-import com.ldy.account.common.event.LoginEvent;
 import com.ldy.account.common.facade.AccountFacadeRepository;
 import com.ldy.account.facadeImpl.AccountFacadeImpl;
 import com.ldy.common.ActivityStack;
 import com.ldy.common.base.ComparableWrapper;
+import com.ldy.common.modulecommunication.event.plug.EventControl;
 import com.ldy.common.receiver.ModuleInitReceiver;
 import com.ldy.setting.common.event.GetSettingItemEvent;
 
-import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
 
 public class AccountInitReceiver extends ModuleInitReceiver {
@@ -23,7 +22,7 @@ public class AccountInitReceiver extends ModuleInitReceiver {
     @Override
     protected void init(Context context) {
         AccountFacadeRepository.instance().setFacade(AccountFacadeImpl.instance());
-        EventBus.getDefault().register(this);
+        EventControl.instance().register(this);
     }
 
     @Override
