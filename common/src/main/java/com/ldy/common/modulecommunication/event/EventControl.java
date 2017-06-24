@@ -1,6 +1,6 @@
-package com.ldy.common.modulecommunication.event.plug;
+package com.ldy.common.modulecommunication.event;
 
-import com.ldy.common.modulecommunication.event.Event;
+import com.ldy.common.modulecommunication.event.plug.EventPlug;
 
 import org.greenrobot.eventbus.EventBus;
 

@@ -10,7 +10,7 @@ import android.widget.LinearLayout;
 
 import com.ldy.common.base.BaseFragment;
 import com.ldy.common.base.ComparableWrapper;
-import com.ldy.common.modulecommunication.event.plug.EventControl;
+import com.ldy.common.modulecommunication.event.EventControl;
 import com.ldy.setting.common.event.GetSettingItemEvent;
 
 

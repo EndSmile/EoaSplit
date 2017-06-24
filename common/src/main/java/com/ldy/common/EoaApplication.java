@@ -5,7 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 
 import com.ldy.common.modulecommunication.event.plug.EventLogPlug;
-import com.ldy.common.modulecommunication.event.plug.EventControl;
+import com.ldy.common.modulecommunication.event.EventControl;
 
 
 /**

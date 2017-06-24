@@ -6,14 +6,13 @@ import android.util.Log;
 
 import com.ldy.common.base.ComparableWrapper;
 import com.ldy.common.factor.Factory;
-import com.ldy.common.modulecommunication.event.plug.EventControl;
+import com.ldy.common.modulecommunication.event.EventControl;
 import com.ldy.common.receiver.ModuleInitReceiver;
 import com.ldy.main.common.entity.MainPageEntity;
 import com.ldy.main.common.event.GetMainPageEvent;
 import com.ldy.setting.R;
 import com.ldy.setting.SettingFragment;
 
-import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
 
 public class SettingInitReceiver extends ModuleInitReceiver {

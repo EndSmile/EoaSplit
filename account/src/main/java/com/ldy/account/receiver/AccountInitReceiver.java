@@ -11,7 +11,7 @@ import com.ldy.account.common.facade.AccountFacadeRepository;
 import com.ldy.account.facadeImpl.AccountFacadeImpl;
 import com.ldy.common.ActivityStack;
 import com.ldy.common.base.ComparableWrapper;
-import com.ldy.common.modulecommunication.event.plug.EventControl;
+import com.ldy.common.modulecommunication.event.EventControl;
 import com.ldy.common.receiver.ModuleInitReceiver;
 import com.ldy.setting.common.event.GetSettingItemEvent;
 

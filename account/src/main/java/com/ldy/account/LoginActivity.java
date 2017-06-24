@@ -6,7 +6,6 @@ import android.annotation.TargetApi;
 import android.content.pm.PackageManager;
 import android.support.annotation.NonNull;
 import android.support.design.widget.Snackbar;
-import android.support.v7.app.AppCompatActivity;
 import android.app.LoaderManager.LoaderCallbacks;
 
 import android.content.CursorLoader;
@@ -34,7 +33,7 @@ import com.ldy.account.common.bean.AccountBean;
 import com.ldy.account.common.event.LoginEvent;
 import com.ldy.account.facadeImpl.AccountFacadeImpl;
 import com.ldy.common.base.BaseActivity;
-import com.ldy.common.modulecommunication.event.plug.EventControl;
+import com.ldy.common.modulecommunication.event.EventControl;
 import com.ldy.common.navigator.Navigator;
 
 import java.util.ArrayList;
