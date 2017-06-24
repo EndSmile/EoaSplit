@@ -5,6 +5,7 @@ import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
+import com.ldy.common.base.BaseActivity;
 import com.ldy.common.base.ComparableWrapper;
 import com.ldy.common.modulecommunication.event.plug.EventControl;
 import com.ldy.main.common.entity.MainPageEntity;
@@ -14,7 +15,7 @@ import com.ldy.main.widget.tabview.TabView;
 
 import java.util.ArrayList;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends BaseActivity {
 
     private ViewPager viewPager;
     private TabView tabView;

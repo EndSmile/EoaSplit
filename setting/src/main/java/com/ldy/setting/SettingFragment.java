@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 
+import com.ldy.common.base.BaseFragment;
 import com.ldy.common.base.ComparableWrapper;
 import com.ldy.common.modulecommunication.event.plug.EventControl;
 import com.ldy.setting.common.event.GetSettingItemEvent;
@@ -16,7 +17,7 @@ import com.ldy.setting.common.event.GetSettingItemEvent;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class SettingFragment extends Fragment {
+public class SettingFragment extends BaseFragment {
 
 
     public SettingFragment() {

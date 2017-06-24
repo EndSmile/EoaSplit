@@ -24,8 +24,9 @@ public class EventControl {
     }
 
     public void post(Event event) {
-        preEvent(event);
-        eventBus.post(event);
+        if (!preEvent(event)) {
+            eventBus.post(event);
+        }
         postEvent(event);
     }
 

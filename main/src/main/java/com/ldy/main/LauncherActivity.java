@@ -6,9 +6,10 @@ import android.view.View;
 
 import com.ldy.account.common.facade.AccountFacade;
 import com.ldy.account.common.facade.AccountFacadeRepository;
+import com.ldy.common.base.BaseActivity;
 import com.ldy.main.navigator.MainNavigator;
 
-public class LauncherActivity extends AppCompatActivity {
+public class LauncherActivity extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

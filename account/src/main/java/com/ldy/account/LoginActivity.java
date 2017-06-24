@@ -33,6 +33,7 @@ import android.widget.TextView;
 import com.ldy.account.common.bean.AccountBean;
 import com.ldy.account.common.event.LoginEvent;
 import com.ldy.account.facadeImpl.AccountFacadeImpl;
+import com.ldy.common.base.BaseActivity;
 import com.ldy.common.modulecommunication.event.plug.EventControl;
 import com.ldy.common.navigator.Navigator;
 
@@ -44,7 +45,7 @@ import static android.Manifest.permission.READ_CONTACTS;
 /**
  * A login screen that offers login via email/password.
  */
-public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<Cursor> {
+public class LoginActivity extends BaseActivity implements LoaderCallbacks<Cursor> {
 
     /**
      * Id to identity READ_CONTACTS permission request.

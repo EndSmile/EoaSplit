@@ -11,6 +11,7 @@ import com.ldy.common.modulecommunication.event.plug.EventControl;
 import com.ldy.common.receiver.ModuleInitReceiver;
 import com.ldy.im.IMFragment;
 import com.ldy.im.R;
+import com.ldy.im.config.IMConfig;
 import com.ldy.main.common.entity.MainPageEntity;
 import com.ldy.main.common.event.GetMainPageEvent;
 import com.ldy.main.common.facade.MainFacade;
@@ -42,7 +43,9 @@ public class IMInitReceiver extends ModuleInitReceiver {
                                 return new IMFragment();
                             }
                         },
-                        R.string.im_conversation, R.drawable.im_ic_im_normal, R.drawable.im_ic_im_selected
+                        IMConfig.MAIN_TITLE,
+                        IMConfig.MAIN_ICON_NORMAL,
+                        IMConfig.MAIN_ICON_SELECT
                 )
         ));
 

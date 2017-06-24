@@ -7,11 +7,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.ldy.common.base.BaseFragment;
+
 
 /**
  * A simple {@link Fragment} subclass.
  */
-public class IMFragment extends Fragment {
+public class IMFragment extends BaseFragment {
 
 
     public IMFragment() {
