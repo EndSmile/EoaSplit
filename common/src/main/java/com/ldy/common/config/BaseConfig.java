@@ -1,17 +1,12 @@
 package com.ldy.common.config;
 
-import android.content.Context;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 
-import com.ldy.common.EoaApplication;
 import com.ldy.common.util.TransformUtil;
 
-import java.io.IOException;
-import java.io.InputStream;
 import java.security.InvalidParameterException;
 import java.util.Arrays;
-import java.util.Properties;
 
 /**
  * Created by ldy on 2017/6/24.
@@ -55,7 +50,7 @@ public class BaseConfig {
     public static float getVerifyFloatValue(Object... objects) {
         Float aFloat = TransformUtil.toFloat(getVerifyValue(objects));
         if (aFloat == null) {
-            throw new InvalidParameterException("参数解析结果不为int类型");
+            throw new InvalidParameterException("参数解析结果不为float类型");
         }
         return aFloat;
     }
