@@ -9,12 +9,9 @@
             android:name=".LoginActivity"
             android:label="@string/account_title_activity_login" />
 
-        <receiver android:name=".receiver.AccountInitReceiver">
-            <intent-filter>
-                <action android:name="com.xdja.eoa.module.init" />
-                <action android:name="com.xdja.eoa.module.initFinish"/>
-            </intent-filter>
-        </receiver>
+        <meta-data
+            android:name="com.ldy.account.receiver.AccountInitReceiver"
+            android:value="module_init"/>
     </application>
 
 </manifest>

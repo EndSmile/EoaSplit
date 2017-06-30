@@ -9,12 +9,12 @@ import com.ldy.main.facadeimpl.MainFacadeImpl;
 public class MainInitReceiver extends ModuleInitReceiver {
 
     @Override
-    protected void init(Context context) {
+    public void init(Context context) {
         MainFacadeRepository.instance().setFacade(MainFacadeImpl.instance());
     }
 
     @Override
-    protected void initFinish(Context context) {
+    public void initFinish(Context context) {
 
     }
 }

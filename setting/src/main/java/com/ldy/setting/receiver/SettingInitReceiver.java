@@ -18,13 +18,13 @@ import org.greenrobot.eventbus.Subscribe;
 public class SettingInitReceiver extends ModuleInitReceiver {
 
     @Override
-    protected void init(Context context) {
+    public void init(Context context) {
         Log.d("SettingInitReceiver", "settingInit");
         EventControl.instance().register(this);
     }
 
     @Override
-    protected void initFinish(Context context) {
+    public void initFinish(Context context) {
 
     }
 

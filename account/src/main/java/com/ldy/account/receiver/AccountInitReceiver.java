@@ -20,13 +20,13 @@ import org.greenrobot.eventbus.Subscribe;
 public class AccountInitReceiver extends ModuleInitReceiver {
 
     @Override
-    protected void init(Context context) {
+    public void init(Context context) {
         AccountFacadeRepository.instance().setFacade(AccountFacadeImpl.instance());
         EventControl.instance().register(this);
     }
 
     @Override
-    protected void initFinish(Context context) {
+    public void initFinish(Context context) {
 
     }
 
